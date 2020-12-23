@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Mes évaluations</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@0:400;0:700;1:400&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+    <!-- Navbar start -->
+    <div class="bg-white">
+        <div class="container-fluid">
+            <nav id="navbar">
+                <button type="button" class="hamburger">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                </button>
+
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo"></a>
+
+                <ul class="main-menu list-unstyled clearfix">
+                    <li class="nav-item">
+                        <a class="nav-link" href="company.html">Ma société</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="find-jobs.html">Trouver des missions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my-listings.html">Mes missions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="earnings.html">Mes gains</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="evaluations.html">Mes évaluations</a>
+                    </li>
+                </ul>
+
+                <div class="nav-item dropdown menu-dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"><img class="dropdown-icon" src="images/dropdown-icon.png" alt=""></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Se déconnecter</a>
+                    </div>
+                </div>            
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar end -->
+
+    <!--main start -->
+    <div id="main-wrap">
+    	<div class="container-fluid">
+            <div id="main" class="vph">
+
+                <!-- Empty State -->
+                <div class="centered d-none">
+                    <p>Pas de d’évaluation disponible pour le moment</p>
+                </div>
+
+                <div class="statistics bg-white">
+                    <div class="clearfix">
+                        <div class="rating-box text-center clearfix float-md-left">
+                            <div class="float-left">
+                                <img class="avatar rounded-circle" src="images/driver.png" alt="">
+                                <span class="username">Gilles Dubois</span>
+                            </div>
+                            <div class="float-right rating-info">
+                                <strong class="rating d-block">4.8</strong>
+                                <strong class="total-rating text-uppercase">sur 5</strong>
+                            </div>
+                        </div>
+                        
+                        <ul class="list-unstyled progress-bars">
+                            <li>
+                                <span class="label">Communication</span>
+                                <span class="progress-bar rounded-pill" style="width: 20%"></span>
+                                <span class="percentage">20%</span>
+                            </li>
+                            <li>
+                                <span class="label">Courtoisie</span>
+                                <span class="progress-bar rounded-pill" style="width: 40%"></span>
+                                <span class="percentage">40%</span>
+                            </li>
+                            <li>
+                                <span class="label">Ponctualité</span>
+                                <span class="progress-bar rounded-pill" style="width: 60%"></span>
+                                <span class="percentage">60%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="based-text">Statistique basé sur 18 avis clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end -->
+    
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
