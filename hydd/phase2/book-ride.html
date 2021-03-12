@@ -476,21 +476,25 @@
 
     <!-- Modals Start -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-board">
         Launch demo modal
     </button>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-board">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <h5 class="modal-title">Name board</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="form-group text-center board-field-wrap">
+                        <input type="text" class="form-control form-control-lg text-center" placeholder="Your name">
+                        <img src="assets/images/logo.png" alt="">
+                    </div>
+                    <p>The driver will meet you in the arrival hall holding a name board. Any parking charges will be added to the final fare.  If you are doing the reservation for someone else, please  mention his/her phone number in instructions.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info btn-block">Submit</button>

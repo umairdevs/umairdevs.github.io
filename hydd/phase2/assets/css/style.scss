@@ -746,6 +746,35 @@ _________________________*/
     }
 }
 
+/* Models Start
+_________________________*/
+.modal-header {
+    border-bottom: none;
+}
+.modal-body {
+    padding: 32px;
+}
+.modal-footer {
+    border-top: none;
+}
+#modal-board {
+    p {
+        font-size: 14px;
+    }
+}
+.board-field-wrap {
+    border: 1px solid #454f63;
+    border-radius: 6px;
+    padding: 0 30px 10px;
+    .form-control {
+        font-size: 23px;
+        margin-bottom: 5px;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #454f63;
+    }
+}
+
 @media (min-width: 992px) {
     .navbar-expand-lg {
         .navbar-nav {
