@@ -19,6 +19,9 @@ h3 {
     font-size: 18px;
     padding: 9px 12px 10px;
     border-radius: 5px;
+    &:focus {
+        box-shadow: none;
+    }
 }
 .btn-lg {
     font-size: 24px;
@@ -69,6 +72,77 @@ h3 {
         }
     }
 }
+.custom-counter {
+    background: #eff0f3;
+    border-radius: 5px;
+    border: 2px solid #3acce1;
+    transition: background 0.3s;
+    &.active,
+    &:hover {
+        background: #3acce1;
+        img {
+            display: none;
+        }
+        .icon-white {
+            display: inline-block;
+        }
+        input {
+            color: #fff;
+        }
+        .btn {
+            &:before {
+                background: #fff;
+            }
+        }
+    }
+    input {
+        background: none;
+        width: 111px;
+        font-size: 27px;
+        cursor: default;
+        &:focus {
+            outline: none;
+        }
+    }
+    .btn {
+        position: relative;
+        min-width: 68px;
+        padding: 7px 0 11px;
+        &:before {
+            content: '';
+            background: #707070;
+            width: 1px;
+            height: 34px;
+            border-radius: 1px;
+            position: absolute;
+            top: 50%;
+            margin-top: -17px;
+            left: 0;
+            z-index: 1;
+        }
+        &:first-child {
+            &:before {
+                left: auto;
+                right: 0;
+            }
+        }
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+    img {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+    .icon-white {
+        display: none;
+    }
+}
 // Forms
 .form-group {
     margin-bottom: 30px;
@@ -80,6 +154,7 @@ h3 {
 }
 .form-control {
     color: #454f63;
+    border-radius: 12px;
     &::-webkit-input-placeholder {
         color: #b4bac9;
     }
@@ -92,6 +167,14 @@ h3 {
     &.has-shadow {
         box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
     }
+}
+// Common
+.content-box {
+    box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+    border-radius: 12px;
+}
+.custom-hr {
+    border-top-color: #f4f4f6;
 }
 
 /*_________ Header Start _________*/
@@ -167,6 +250,9 @@ h3 {
 .content-sm {
     max-width: 644px;
     margin: 0 auto;
+    .title {
+        margin-bottom: 35px;
+    }
 }
 .content-xs {
     max-width: 472px;
@@ -500,6 +586,9 @@ _________________________*/
 .ride-slider {
     margin-bottom: 40px;
     padding: 0 50px;
+    .custom-counter {
+        visibility: hidden;
+    }
     .slick-slide {
         margin: 0 48px;
         padding: 18px 0;
@@ -507,7 +596,7 @@ _________________________*/
             outline: none;
         }
         &.slick-current {
-            .btn-group {
+            .custom-counter {
                 visibility: visible;
             }
         }
@@ -610,78 +699,8 @@ _________________________*/
             z-index: 1;
         }
     }
-    .btn-group {
-        visibility: hidden;
-        background: #eff0f3;
-        border-radius: 5px;
-        border: 2px solid #3acce1;
-        transition: all 0.3s;
-        &:hover {
-            background: #3acce1;
-            img {
-                display: none;
-            }
-            .icon-white {
-                display: inline-block;
-            }
-            input {
-                color: #fff;
-            }
-            .btn {
-                &:before {
-                    background: #fff;
-                }
-            }
-        }
-        input {
-            background: none;
-            width: 111px;
-            font-size: 27px;
-            cursor: default;
-            &:focus {
-                outline: none;
-            }
-        }
-        .btn {
-            position: relative;
-            min-width: 68px;
-            padding: 7px 0 11px;
-            &:before {
-                content: '';
-                background: #707070;
-                width: 1px;
-                height: 34px;
-                border-radius: 1px;
-                position: absolute;
-                top: 50%;
-                margin-top: -17px;
-                left: 0;
-                z-index: 1;
-            }
-            &:first-child {
-                &:before {
-                    left: auto;
-                    right: 0;
-                }
-            }
-            &:hover {
-                img {
-                    opacity: 1;
-                }
-            }
-        }
-        img {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-        .icon-white {
-            display: none;
-        }
-    }
 }
+
 .choices {
     background: #edeff2;
     border-radius: 16px;
@@ -745,21 +764,147 @@ _________________________*/
         }
     }
 }
+/* Order Start
+_________________________*/
+.additional-info {
+    .title {
+        font-size: 40px;
+    }
+}
+.field-flight {
+    background: url(../images/aeroplane.svg) no-repeat 18px center;
+    background-size: 24px auto;
+    padding-left: 70px;
+}
+.has-label {
+    position: relative;
+    label {
+        background: url(../images/instruction.svg) no-repeat left center;
+        padding-left: 50px;
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        z-index: 1;
+    }
+    .text-mute {
+        color: #959dad;
+    }
+    textarea {
+        padding-top: 70px;
+    }
+}
+.order-details {
+    .listings {
+        .title {
+            font-size: 16px;
+        }
+        .content-box {
+            margin-bottom: 18px;
+            padding: 12px 22px;
+        }
+        .custom-hr {
+            max-width: 96%;
+        }
+    }
+    .subtitle {
+        font-size: 12px;
+        color: #959dad;
+    }
+    .label {
+        display: block;
+        font-size: 12px;
+        color: #959dad;
+    }
+    .val {
+        font-size: 16px;
+    }
+    .col-mid {
+        &:before,
+        &:after {
+            content: '';
+            background: #f4f4f6;
+            width: 1px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+    .dates {
+        font-size: 8px;
+        .date {
+            font-size: 18px;
+        }
+    }
+}
 
 /* Models Start
 _________________________*/
+.modal-content {
+    border-radius: 14px;
+}
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+}
 .modal-header {
     border-bottom: none;
-}
-.modal-body {
-    padding: 32px;
+    .close {
+        &:focus {
+            outline: none;
+        }
+    }
 }
 .modal-footer {
     border-top: none;
+    padding-bottom: 60px;
 }
 #modal-board {
     p {
         font-size: 14px;
+        color: #959dad;
+    }
+}
+.custom-modal {
+    .label {
+        display: block;
+    }
+    .label-weight {
+        font-size: 18px;
+    }
+    .label-age {
+        color: #959dad;
+        font-size: 19px;
+    }
+    .label-passengers {
+        font-size: 24px;
+        padding-top: 5px;
+    }
+    .mb {
+        margin-bottom: 34px;
+    }
+    .custom-counter {
+        input {
+            width: 70px;
+        }
+        .btn {
+            min-width: 60px;
+        }
+    }
+}
+#modal-seat {
+    .modal-title {
+        background: url(../images/baby-seat.svg) no-repeat left center;
+        background-size: 22px auto;
+        padding-left: 40px;
     }
 }
 .board-field-wrap {
@@ -775,6 +920,13 @@ _________________________*/
     }
 }
 
+@media (min-width: 576px) {
+    .custom-modal {
+        .modal-dialog {
+            max-width: 592px;
+        }
+    }
+}
 @media (min-width: 992px) {
     .navbar-expand-lg {
         .navbar-nav {

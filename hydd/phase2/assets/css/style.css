@@ -23,6 +23,9 @@ h3 {
   padding: 9px 12px 10px;
   border-radius: 5px;
 }
+.btn:focus {
+  box-shadow: none;
+}
 
 .btn-lg {
   font-size: 24px;
@@ -75,6 +78,71 @@ h3 {
   left: 28px;
 }
 
+.custom-counter {
+  background: #eff0f3;
+  border-radius: 5px;
+  border: 2px solid #3acce1;
+  transition: background 0.3s;
+}
+.custom-counter.active, .custom-counter:hover {
+  background: #3acce1;
+}
+.custom-counter.active img, .custom-counter:hover img {
+  display: none;
+}
+.custom-counter.active .icon-white, .custom-counter:hover .icon-white {
+  display: inline-block;
+}
+.custom-counter.active input, .custom-counter:hover input {
+  color: #fff;
+}
+.custom-counter.active .btn:before, .custom-counter:hover .btn:before {
+  background: #fff;
+}
+.custom-counter input {
+  background: none;
+  width: 111px;
+  font-size: 27px;
+  cursor: default;
+}
+.custom-counter input:focus {
+  outline: none;
+}
+.custom-counter .btn {
+  position: relative;
+  min-width: 68px;
+  padding: 7px 0 11px;
+}
+.custom-counter .btn:before {
+  content: '';
+  background: #707070;
+  width: 1px;
+  height: 34px;
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 0;
+  z-index: 1;
+}
+.custom-counter .btn:first-child:before {
+  left: auto;
+  right: 0;
+}
+.custom-counter .btn:hover img {
+  opacity: 1;
+}
+.custom-counter img {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.custom-counter .icon-white {
+  display: none;
+}
+
 .form-group {
   margin-bottom: 30px;
 }
@@ -87,6 +155,7 @@ h3 {
 
 .form-control {
   color: #454f63;
+  border-radius: 12px;
 }
 .form-control::-webkit-input-placeholder {
   color: #b4bac9;
@@ -99,6 +168,15 @@ h3 {
 }
 .form-control.has-shadow {
   box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+}
+
+.content-box {
+  box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+  border-radius: 12px;
+}
+
+.custom-hr {
+  border-top-color: #f4f4f6;
 }
 
 /*_________ Header Start _________*/
@@ -162,6 +240,9 @@ h3 {
 .content-sm {
   max-width: 644px;
   margin: 0 auto;
+}
+.content-sm .title {
+  margin-bottom: 35px;
 }
 
 .content-xs {
@@ -500,6 +581,9 @@ _________________________*/
   margin-bottom: 40px;
   padding: 0 50px;
 }
+.ride-slider .custom-counter {
+  visibility: hidden;
+}
 .ride-slider .slick-slide {
   margin: 0 48px;
   padding: 18px 0;
@@ -507,7 +591,7 @@ _________________________*/
 .ride-slider .slick-slide:focus {
   outline: none;
 }
-.ride-slider .slick-slide.slick-current .btn-group {
+.ride-slider .slick-slide.slick-current .custom-counter {
   visibility: visible;
 }
 .ride-slider .slide-inner {
@@ -608,71 +692,6 @@ _________________________*/
   right: 0;
   z-index: 1;
 }
-.ride-slider .btn-group {
-  visibility: hidden;
-  background: #eff0f3;
-  border-radius: 5px;
-  border: 2px solid #3acce1;
-  transition: all 0.3s;
-}
-.ride-slider .btn-group:hover {
-  background: #3acce1;
-}
-.ride-slider .btn-group:hover img {
-  display: none;
-}
-.ride-slider .btn-group:hover .icon-white {
-  display: inline-block;
-}
-.ride-slider .btn-group:hover input {
-  color: #fff;
-}
-.ride-slider .btn-group:hover .btn:before {
-  background: #fff;
-}
-.ride-slider .btn-group input {
-  background: none;
-  width: 111px;
-  font-size: 27px;
-  cursor: default;
-}
-.ride-slider .btn-group input:focus {
-  outline: none;
-}
-.ride-slider .btn-group .btn {
-  position: relative;
-  min-width: 68px;
-  padding: 7px 0 11px;
-}
-.ride-slider .btn-group .btn:before {
-  content: '';
-  background: #707070;
-  width: 1px;
-  height: 34px;
-  border-radius: 1px;
-  position: absolute;
-  top: 50%;
-  margin-top: -17px;
-  left: 0;
-  z-index: 1;
-}
-.ride-slider .btn-group .btn:first-child:before {
-  left: auto;
-  right: 0;
-}
-.ride-slider .btn-group .btn:hover img {
-  opacity: 1;
-}
-.ride-slider .btn-group img {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
-.ride-slider .btn-group .icon-white {
-  display: none;
-}
 
 .choices {
   background: #edeff2;
@@ -737,22 +756,138 @@ _________________________*/
   padding-left: 38px;
 }
 
+/* Order Start
+_________________________*/
+.additional-info .title {
+  font-size: 40px;
+}
+
+.field-flight {
+  background: url(../images/aeroplane.svg) no-repeat 18px center;
+  background-size: 24px auto;
+  padding-left: 70px;
+}
+
+.has-label {
+  position: relative;
+}
+.has-label label {
+  background: url(../images/instruction.svg) no-repeat left center;
+  padding-left: 50px;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  z-index: 1;
+}
+.has-label .text-mute {
+  color: #959dad;
+}
+.has-label textarea {
+  padding-top: 70px;
+}
+
+.order-details .listings .title {
+  font-size: 16px;
+}
+.order-details .listings .content-box {
+  margin-bottom: 18px;
+  padding: 12px 22px;
+}
+.order-details .listings .custom-hr {
+  max-width: 96%;
+}
+.order-details .subtitle {
+  font-size: 12px;
+  color: #959dad;
+}
+.order-details .label {
+  display: block;
+  font-size: 12px;
+  color: #959dad;
+}
+.order-details .val {
+  font-size: 16px;
+}
+.order-details .col-mid:before, .order-details .col-mid:after {
+  content: '';
+  background: #f4f4f6;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.order-details .col-mid:before {
+  left: 0;
+}
+.order-details .col-mid:after {
+  right: 0;
+}
+.order-details .dates {
+  font-size: 8px;
+}
+.order-details .dates .date {
+  font-size: 18px;
+}
+
 /* Models Start
 _________________________*/
+.modal-content {
+  border-radius: 14px;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 .modal-header {
   border-bottom: none;
 }
-
-.modal-body {
-  padding: 32px;
+.modal-header .close:focus {
+  outline: none;
 }
 
 .modal-footer {
   border-top: none;
+  padding-bottom: 60px;
 }
 
 #modal-board p {
   font-size: 14px;
+  color: #959dad;
+}
+
+.custom-modal .label {
+  display: block;
+}
+.custom-modal .label-weight {
+  font-size: 18px;
+}
+.custom-modal .label-age {
+  color: #959dad;
+  font-size: 19px;
+}
+.custom-modal .label-passengers {
+  font-size: 24px;
+  padding-top: 5px;
+}
+.custom-modal .mb {
+  margin-bottom: 34px;
+}
+.custom-modal .custom-counter input {
+  width: 70px;
+}
+.custom-modal .custom-counter .btn {
+  min-width: 60px;
+}
+
+#modal-seat .modal-title {
+  background: url(../images/baby-seat.svg) no-repeat left center;
+  background-size: 22px auto;
+  padding-left: 40px;
 }
 
 .board-field-wrap {
@@ -768,6 +903,11 @@ _________________________*/
   border-bottom: 1px solid #454f63;
 }
 
+@media (min-width: 576px) {
+  .custom-modal .modal-dialog {
+    max-width: 592px;
+  }
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding: 20px 0;

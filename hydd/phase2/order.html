@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Order</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+    <!-- Header start -->
+    <header class="navbar navbar-expand-lg navbar-light">
+        <div class="container-md">
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Order</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">EN</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">FR</a>
+                            <a class="dropdown-item" href="#">EN</a>
+                        </div>
+                    </li>
+                    <li class="nav-item signin">
+                        <a class="nav-link" href="#">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!--main start -->
+    <div id="main-wrap">
+    	<div class="container-md">
+            <div id="main">
+                <div class="content-xs additional-info">
+                    <h2 class="title">Additional information</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg has-shadow border-0 field-flight" placeholder="Flight number">
+                    </div>
+                    <div class="form-group has-label">
+                        <label>Instructions <span class="text-mute">(optional)</span></label>
+                        <textarea class="form-control form-control-lg has-shadow border-0" cols="30" rows="4" placeholder="Information for driver"></textarea>
+                    </div>
+                    <input class="btn btn-block btn-lg btn-info" type="submit" value="Next">
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="content-sm order-details">
+                    <h2 class="title">Details</h2>
+                    <div class="listings">
+                        <div class="content-box">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h5 class="title mb-0">Executive Class</h5>
+                                    <span class="subtitle">Mercedes-Benz E-Class or similar</span>
+                                </div>
+                                <div class="col-sm-4 text-sm-right">
+                                    <img src="assets/images/vehicle1.png" alt="">
+                                </div>
+                            </div>
+                            <hr class="custom-hr">
+                            <div class="row text-center">
+                                <div class="col-sm-4">
+                                    <span class="label">Number of car</span>
+                                    <span class="val">x1</span>
+                                </div>
+                                <div class="col-sm-4 col-mid">
+                                    <span class="label">Hours included</span>
+                                    <span class="val">x16</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span class="label">Km included</span>
+                                    <span class="val">x400</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-box">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h5 class="title mb-0">Executive Class</h5>
+                                    <span class="subtitle">Mercedes-Benz E-Class or similar</span>
+                                </div>
+                                <div class="col-sm-4 text-sm-right">
+                                    <img src="assets/images/vehicle1.png" alt="">
+                                </div>
+                            </div>
+                            <hr class="custom-hr">
+                            <div class="row text-center">
+                                <div class="col-sm-4">
+                                    <span class="label">Number of car</span>
+                                    <span class="val">x1</span>
+                                </div>
+                                <div class="col-sm-4 col-mid">
+                                    <span class="label">Hours included</span>
+                                    <span class="val">x16</span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <span class="label">Km included</span>
+                                    <span class="val">x400</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-box dates">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                 <span class="text-uppercase d-block">lun.</span>
+                                <span class="date text-bold">18</span> <br>
+                                  MARS <br>
+                                 - <br>
+                                 <span class="time text-bold">13:00</span> <br>
+                            </div>
+                            <div class="col-6">
+                                 <span class="text-uppercase d-block">mer.</span>
+                                <span class="date text-bold">18</span> <br>
+                                  MARS <br>
+                                 - <br>
+                                 <span class="time text-bold">13:00</span> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end -->
+
+    <!-- Modals Start -->
+    <!-- Modals end -->
+    
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/popper.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // Scrollable Area
+            var scrollableElem = document.getElementsByClassName('scrollable');
+
+            for (var i = 0; i <= scrollableElem.length-1; i++) {
+                
+                if (scrollableElem[i].scrollHeight > scrollableElem[i].clientHeight) {
+
+                    scrollableElem[i].style.marginRight = '-38px';
+                    scrollableElem[i].style.paddingRight = '21px';
+                }
+            }
+
+            // Custom counter
+            $('.btn-increment').on('click', function(){
+
+                var countVal = $(this).prev().val();
+                countVal++;
+                $(this).prev().val(countVal);
+                $('.custom-counter').addClass('active');
+            })
+
+            $('.btn-decrement').on('click', function(){
+                var countVal = $(this).next().val();
+                if (countVal > 0) {
+
+                    countVal--;
+                    $(this).next().val(countVal);
+                }
+                if (countVal == 0) {
+                    $('.custom-counter').removeClass('active');
+                }
+            })
+
+        })
+    </script>
+
+</body>
+</html>
