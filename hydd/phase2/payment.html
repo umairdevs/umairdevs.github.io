@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Payment</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+    <!-- Header start -->
+    <header class="navbar navbar-expand-lg navbar-light">
+        <div class="container-md">
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Book Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Order</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">EN</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">FR</a>
+                            <a class="dropdown-item" href="#">EN</a>
+                        </div>
+                    </li>
+                    <li class="nav-item signin">
+                        <a class="nav-link" href="#">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!--main start -->
+    <div id="main-wrap">
+    	<div class="container-md">
+            <div id="main" class="payment-content">
+                <div class="content-xs">
+                    <h2 class="main-title">Payment</h2>
+                    <div class="text-center">
+                        <h3 class="text-medium title">You don’t have <br>any payment method</h3>
+                        <p class="text-mute">To place your first reservation, you need to register <br>at least one payment method</p>
+                    </div>
+                    <input class="btn btn-block btn-lg btn-info" type="submit" value="Add a payment method">
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="content-xs">
+                    <h2 class="main-title">Add a payment method</h2>
+                    <div class="content-box payment-form">
+                        <div class="form-group row mb-0">
+                            <label class="col-sm-4 col-form-label">Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control border-0" placeholder="Card owner">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <label class="col-sm-4 col-form-label">Card number</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control border-0" placeholder="1222 1222 1222 1222">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <label class="col-sm-4 col-form-label">Expiry date</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control border-0" placeholder="MM/YY">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0 border-0">
+                            <label class="col-sm-4 col-form-label">CVV</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control border-0" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-mute mb-4">Your credit card will be debited after the mission. </p>
+                    <input class="btn btn-block btn-lg btn-info" type="submit" value="Save">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main end -->
+    
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
+</html>

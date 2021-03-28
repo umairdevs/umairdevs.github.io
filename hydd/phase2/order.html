@@ -130,25 +130,229 @@
                         </div>
                     </div>
 
-                    <div class="content-box dates">
-                        <div class="row text-center">
-                            <div class="col-6">
-                                 <span class="text-uppercase d-block">lun.</span>
-                                <span class="date text-bold">18</span> <br>
-                                  MARS <br>
-                                 - <br>
-                                 <span class="time text-bold">13:00</span> <br>
+                    <div class="content-box">
+
+                        <div class="dates">
+                            <img class="arrow" src="assets/images/arrow-gray.svg" alt="">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                     <span class="text-uppercase d-block">lun.</span>
+                                    <span class="date text-bold">18</span> <br>
+                                      MARS <br>
+                                     - <br>
+                                     <span class="time text-bold">13:00</span> <br>
+                                </div>
+                                <div class="col-6">
+                                     <span class="text-uppercase d-block">mer.</span>
+                                    <span class="date text-bold">18</span> <br>
+                                      MARS <br>
+                                     - <br>
+                                     <span class="time text-bold">13:00</span> <br>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="location-fields">
+                            <div class="pickup dropdown">
+                                <h3 class="title mb-0">Pickup Location</h3>
+                                <span class="address">Orly…</span>
+                                <ul class="list-unstyled data-list dropdown-menu">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                            </div>
+                            <div class="destination">
+                                <h3 class="title mb-0">Destination</h3>
+                                <span class="address">61 Bd Haussmann, Paris…</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-6">
-                                 <span class="text-uppercase d-block">mer.</span>
-                                <span class="date text-bold">18</span> <br>
-                                  MARS <br>
-                                 - <br>
-                                 <span class="time text-bold">13:00</span> <br>
+                                <span class="card-number">************5341</span>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="total-price">
+                                    <span class="label">Prix total</span><strong>700 &euro;</strong>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <input class="btn btn-block btn-lg btn-info" type="submit" value="Confirm for 700 &euro;">
+                    </div>
                 </div>
+
+                <div class="content-box success-msg">
+                    <div class="content-xs text-center">
+                        <img src="assets/images/success.png" alt="">
+                        <h2 class="title">Than you for using Hydd</h2>
+                        <p>Your reservation details has been sent to our HYDD team. You will receive an email with all the reservation details. We will make sure to provide you a perfect service.</p>
+                        <p class="mb-5">If you have any query, please contact us by email contact@hydd.tech</p>
+                        <a href="#" class="btn btn-info">Ok</a>
+                    </div>
+                </div>
+
+                <div class="custom-tabs bordered-tabs reservation-tabs">
+                    <ul class="nav text-uppercase">
+                        <li>
+                            <a class="active" data-toggle="tab" href="#tabInProgress">In progress</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tabCompleted">Completed</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#tabCancelled">Cancelled</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tabInProgress">
+                                    <h2 class="position-relative tab-content-title">Details of reservation <a href="#" class="link-cancel text-danger">Cancel</a></h2>
+                                    <div class="content-box smart-box searching-driver">
+                                        <h4>Looking for driver</h4>
+                                        <p>You will receive a push notification once a driver will accept your reservation.</p>
+                                    </div>
+
+                                    <div class="content-box smart-box driver-info position-relative">
+                                        <h4>Jean-Claud Legrand</h4>
+                                        <p>Véhicule de type Classe E, Série 5</p>
+                                        <a href="#" class="link-overlay"><img src="assets/images/chevron-right.svg" alt=""></a>
+                                    </div>
+
+                                    <div class="content-box smart-box track-driver position-relative">
+                                        <h4>Where is my driver ?</h4>
+                                        <p>From this feature you can track your driver</p>
+                                        <a href="#" class="link-overlay"><img src="assets/images/chevron-right.svg" alt=""></a>
+                                    </div>
+
+                                    <div class="content-box vehicle-info">
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-8">
+                                                <h4 class="title">Business Class</h4>
+                                                <span class="subtitle">Véhicule de type Classe E, Série 5</span>
+                                            </div>
+                                            <div class="col-sm-4 text-sm-right">
+                                                <img class="vehicle" src="assets/images/vehicle.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <hr class="custom-hr">
+
+                                        <div class="row text-center">
+                                            <div class="col-sm-6">
+                                                <span class="label">Hour package</span>
+                                                <span class="val">9 heures / jour</span>
+                                            </div>
+                                            <div class="col-sm-6 has-separator">
+                                                <span class="label">Km package</span>
+                                                <span class="val">400 km / jour</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-box">
+                                        <div class="timings">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <span class="label">Pickup date & time</span>
+                                                    <span class="val">18/03/2019 13:00</span>
+                                                </div>
+                                                <div class="col-sm-6 has-separator text-sm-right">
+                                                    <span class="label">End mission date & time</span>
+                                                    <span class="val">20/03/2019 12:00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr class="custom-hr">
+
+                                        <div class="location-fields">
+                                            <div class="pickup dropdown">
+                                                <h3 class="title mb-0">Pickup Location</h3>
+                                                <span class="address">Orly…</span>
+                                                <ul class="list-unstyled data-list dropdown-menu">
+                                                    <li>1</li>
+                                                    <li>2</li>
+                                                    <li>3</li>
+                                                </ul>
+                                            </div>
+                                            <div class="destination">
+                                                <h3 class="title mb-0">Destination</h3>
+                                                <span class="address">61 Bd Haussmann, Paris…</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span class="card-number">************5341</span>
+                                            </div>
+                                            <div class="col-6 has-separator text-center">
+                                                <div class="total-price">
+                                                    <span class="label">Prix total</span><strong>700 &euro;</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="tabCompleted">
+                                    <div class="content-box smart-box rate-driver position-relative">
+                                        <h4>Rate Jean-Claud Legrand</h4>
+                                        <p>By giving your review you help us improve</p>
+                                        <a href="#" class="link-overlay"><img src="assets/images/chevron-right.svg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tabCancelled">
+                                    Cancelled
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                            ________________   ________          
+                            \_   _____/  _  \  \_____  \   ______
+                             |    __)/  /_\  \  /  / \  \ /  ___/
+                             |     \/    |    \/   \_/.  \\___ \ 
+                             \___  /\____|__  /\_____\ \_/____  >
+                                 \/         \/        \__>    \/  FAQs-->
+
+                        <div class="col-sm-4">
+
+                            <div class="accordion" id="faqs">
+                                <h2 class="accordion-title">FAQ</h2>
+                                <div class="card">
+                                    <a href="#" data-toggle="collapse" data-target="#faq1">How do i make a reservation?</a>
+                                    <div id="faq1" class="collapse show" data-parent="#faqs">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <a class="collapsed" href="#" data-toggle="collapse" data-target="#faq2">How do i make a reservation?</a>
+                                    <div id="faq2" class="collapse" data-parent="#faqs">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <a class="collapsed" href="#" data-toggle="collapse" data-target="#faq3">How do i make a reservation?</a>
+                                    <div id="faq3" class="collapse" data-parent="#faqs">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
         </div>
     </div>

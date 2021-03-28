@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'lato', sans-serif;
   font-size: 1.125rem;
@@ -28,7 +32,7 @@ h3 {
 }
 
 .btn-lg {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
 }
 
@@ -40,6 +44,12 @@ h3 {
   background: #3bc5db;
   border: none;
   box-shadow: 0 3px 1px #418b96;
+}
+
+.btn-danger {
+  background: #ff5c5c;
+  border: none;
+  box-shadow: 0 3px 1px #dc0000;
 }
 
 .toggle-btn {
@@ -169,6 +179,58 @@ h3 {
 .form-control.has-shadow {
   box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
 }
+.form-control:focus {
+  box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+}
+
+.select-box {
+  position: relative;
+}
+.select-box select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.select-box:after {
+  content: '';
+  background: url(../images/arrow-down.svg) no-repeat;
+  width: 20px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  z-index: 1;
+  margin-top: -7px;
+}
+
+.accordion .card {
+  overflow: visible;
+  margin-bottom: 10px;
+  border: none;
+}
+.accordion .card-body {
+  font-size: 16px;
+}
+.accordion [data-toggle="collapse"] {
+  background: url(../images/chevron-right.svg) no-repeat 96% center;
+  background-size: 8px auto;
+  font-size: 15px;
+  color: #454f63;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+  border-radius: 12px;
+  padding: 15px 18px;
+}
+.accordion [data-toggle="collapse"]:hover {
+  text-decoration: none;
+}
+
+.text-danger {
+  color: #f77 !important;
+}
+
+.text-bold {
+  font-weight: 700;
+}
 
 .content-box {
   box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
@@ -177,6 +239,52 @@ h3 {
 
 .custom-hr {
   border-top-color: #f4f4f6;
+}
+
+.link-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.link-overlay img {
+  width: 12px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  z-index: 1;
+  margin-top: -10px;
+}
+
+.rating-input-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(69, 91, 99, 0.08);
+  padding: 20px;
+}
+
+.rating-input {
+  background: url(../images/star-yellow.svg) no-repeat right center;
+  padding-right: 80px;
+}
+.rating-input a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #454f63;
+  border-radius: 100px;
+  text-align: center;
+  color: #454f63;
+  line-height: 40px;
+}
+.rating-input a:hover {
+  text-decoration: none;
+}
+.rating-input a.selected, .rating-input a:hover {
+  background: #454f63;
+  color: #fff;
 }
 
 /*_________ Header Start _________*/
@@ -217,7 +325,7 @@ h3 {
   opacity: 0.9;
 }
 .navbar .nav-link {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -281,7 +389,6 @@ h3 {
 }
 .custom-tabs .nav li {
   position: relative;
-  width: 50%;
   text-align: center;
   font-size: 15px;
 }
@@ -295,11 +402,15 @@ h3 {
 }
 
 .sign-in-form {
-  padding: 66px 30px 0;
+  padding-top: 66px;
 }
 .sign-in-form .btn-block {
-  max-width: 556px;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
+}
+
+.form-p {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .forgot-password-link {
@@ -315,7 +426,7 @@ h3 {
 }
 
 .link-back {
-  background: url(../images/chevron-right.svg) no-repeat left center;
+  background: url(../images/chevron-left.svg) no-repeat left center;
   background-size: 17px auto;
   color: #454f63;
   font-size: 20px;
@@ -404,19 +515,13 @@ input.validated + .icon-check {
 
 /* Forgot Password Start
 _________________________*/
-.forgot-password .nav li {
-  width: 100%;
-}
 .forgot-password .nav a {
   cursor: default;
 }
 .forgot-password p {
-  font-size: 23px;
+  font-size: 22px;
   color: #959dad;
   margin-bottom: 50px;
-}
-.forgot-password .form-group {
-  margin-bottom: 100px;
 }
 
 /* Payment Method Start
@@ -427,13 +532,17 @@ _________________________*/
 
 /* Book Ride Start
 _________________________*/
+.reservation-title {
+  margin-bottom: 30px;
+}
+
 .location-fields {
   border-bottom: 1px solid #f4f4f6;
   margin-bottom: 16px;
   padding-left: 30px;
 }
 .location-fields .title {
-  font-size: 24px;
+  font-size: 22px;
 }
 .location-fields .pickup,
 .location-fields .destination {
@@ -467,12 +576,14 @@ _________________________*/
   left: -30px;
   z-index: 1;
 }
-.location-fields .pickup {
+.location-fields .pickup.has-icon {
   background-image: url(../images/pin.svg);
 }
 .location-fields .destination {
-  background-image: url(../images/flag.svg);
   margin-bottom: 26px;
+}
+.location-fields .destination.has-icon {
+  background-image: url(../images/flag.svg);
 }
 .location-fields .destination:before {
   top: auto;
@@ -488,6 +599,9 @@ _________________________*/
 }
 .location-fields .form-control:focus {
   box-shadow: none;
+}
+.location-fields .address {
+  color: #b4bac9;
 }
 .location-fields .data-list {
   background: #fff;
@@ -514,9 +628,17 @@ _________________________*/
   position: relative;
   margin-bottom: 30px;
 }
-.schedule-pickup .title {
+.schedule-pickup .form-control {
+  font-size: 22px;
+}
+.schedule-pickup .form-control::-webkit-input-placeholder {
   color: #a7aebb;
-  font-size: 23px;
+}
+.schedule-pickup .form-control:-ms-input-placeholder {
+  color: #a7aebb;
+}
+.schedule-pickup .form-control::placeholder {
+  color: #a7aebb;
 }
 .schedule-pickup .icon-link {
   position: absolute;
@@ -527,6 +649,50 @@ _________________________*/
 .schedule-pickup .icon-link img {
   width: 40px;
   height: 38px;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: auto;
+  padding: 0;
+}
+.bootstrap-datetimepicker-widget .datepicker table {
+  background: #2a2e43;
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+.bootstrap-datetimepicker-widget .datepicker tbody {
+  color: #fff;
+}
+.bootstrap-datetimepicker-widget .datepicker tbody td {
+  width: 42px;
+  height: 42px;
+  border-radius: 100px;
+}
+.bootstrap-datetimepicker-widget .day.active, .bootstrap-datetimepicker-widget .day:hover {
+  background: #3acce1 !important;
+  color: #fff !important;
+}
+.bootstrap-datetimepicker-widget thead {
+  border-bottom: 1px solid #3acce1;
+}
+.bootstrap-datetimepicker-widget thead tr {
+  background: #2a2e43;
+  color: #bfbfbf;
+}
+.bootstrap-datetimepicker-widget thead tr:first-child {
+  background: #3acce1;
+  color: #fff;
+}
+.bootstrap-datetimepicker-widget thead th {
+  border-radius: 0;
+}
+.bootstrap-datetimepicker-widget .picker-switch {
+  background: #3acce1;
+  color: #fff;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+  background: #138496;
+  color: #fff;
 }
 
 .slider-labels {
@@ -559,12 +725,13 @@ _________________________*/
   box-shadow: 5px 3px 8px rgba(69, 91, 99, 0.08);
 }
 .slider-labels .sub-item {
+  font-size: 0;
   width: 11px !important;
   height: 11px;
   border: 1px solid #707070;
   padding: 0;
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 0;
   z-index: 1;
 }
@@ -786,12 +953,12 @@ _________________________*/
   padding-top: 70px;
 }
 
-.order-details .listings .title {
-  font-size: 16px;
-}
-.order-details .listings .content-box {
+.order-details .content-box {
   margin-bottom: 18px;
   padding: 12px 22px;
+}
+.order-details .listings .title {
+  font-size: 16px;
 }
 .order-details .listings .custom-hr {
   max-width: 96%;
@@ -802,7 +969,7 @@ _________________________*/
 }
 .order-details .label {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: #959dad;
 }
 .order-details .val {
@@ -824,16 +991,360 @@ _________________________*/
   right: 0;
 }
 .order-details .dates {
-  font-size: 8px;
+  position: relative;
+  font-size: 12px;
+  padding-top: 13px;
+  margin-bottom: 32px;
 }
 .order-details .dates .date {
   font-size: 18px;
+}
+.order-details .dates .arrow {
+  width: 52px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -26px;
+  z-index: 1;
+}
+.order-details .card-number {
+  background: url(../images/card.svg) no-repeat left center;
+  background-size: 16px auto;
+  font-size: 14px;
+  margin-left: 10px;
+  padding-left: 32px;
+}
+
+.total-price .label {
+  display: block;
+  font-size: 14px;
+  color: #959dad;
+}
+
+.success-msg {
+  padding: 85px 0;
+}
+.success-msg .content-xs {
+  max-width: 390px;
+}
+.success-msg img {
+  margin-bottom: 50px;
+}
+.success-msg .title {
+  color: #68cade;
+}
+.success-msg p {
+  font-size: 16px;
+  color: #959dad;
+}
+.success-msg .btn {
+  min-width: 304px;
+}
+
+.reservation-tabs .nav li {
+  min-width: 260px;
+}
+.reservation-tabs .tab-content-title {
+  margin-bottom: 38px;
+}
+.reservation-tabs .link-cancel {
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  text-decoration: underline;
+}
+.reservation-tabs .link-cancel:hover {
+  text-decoration: none;
+}
+.reservation-tabs .content-box {
+  margin-bottom: 28px;
+  padding: 20px 52px;
+}
+.reservation-tabs .has-separator:before {
+  content: '';
+  margin-left: -1px;
+  border-left: 2px solid #f4f4f6;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  bottom: 0;
+  z-index: 1;
+}
+.reservation-tabs .smart-box {
+  padding: 22px 36px 12px 98px;
+}
+.reservation-tabs .smart-box p {
+  color: #959dad;
+}
+.reservation-tabs .searching-driver {
+  background: url(../images/search.svg) no-repeat 36px center;
+  background-size: 28px auto;
+}
+.reservation-tabs .driver-info {
+  background: url(../images/accelerator.png) no-repeat 30px center;
+  background-size: 40px auto;
+}
+.reservation-tabs .track-driver {
+  background: url(../images/target.svg) no-repeat 32px center;
+  background-size: 32px auto;
+}
+.reservation-tabs .rate-driver {
+  background: url(../images/star.svg) no-repeat 32px center;
+  background-size: 32px auto;
+}
+.reservation-tabs .timings {
+  margin-bottom: 20px;
+}
+.reservation-tabs .timings .label {
+  display: block;
+  color: #959dad;
+}
+.reservation-tabs .timings .val {
+  font-size: 20px;
+}
+
+.vehicle-info {
+  padding: 20px 52px;
+}
+.vehicle-info .subtitle {
+  color: #959dad;
+}
+.vehicle-info .vehicle {
+  width: 213px;
+}
+.vehicle-info .label {
+  display: block;
+  color: #959dad;
+}
+.vehicle-info .val {
+  font-size: 24px;
+}
+
+.accordion-title {
+  margin-bottom: 38px;
+}
+
+/* Payment Start
+_________________________*/
+.payment-content .main-title {
+  margin-bottom: 50px;
+}
+
+.payment-form {
+  margin-bottom: 15px;
+  padding: 16px 24px 0;
+}
+.payment-form .form-group {
+  border-bottom: 1px solid #f4f4f6;
+  padding: 5px 0;
+}
+.payment-form .col-form-label {
+  font-size: 15px;
+}
+.payment-form .form-control:focus {
+  box-shadow: none;
+}
+
+/* Map Section Start
+_________________________*/
+#map-wrapper {
+  background: url(../images/bg-map.jpg);
+  height: calc(100% - 67px);
+  padding-top: 32px;
+}
+#map-wrapper .btn-back {
+  min-width: 117px;
+  background: #fff;
+  color: #959dad;
+  font-weight: 400;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  padding: 16px 12px 17px;
+}
+#map-wrapper .btn-back:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#map-wrapper .info-box {
+  min-width: 163px;
+  display: inline-block;
+  background: #4d576a;
+  color: #efefef;
+  font-size: 16px;
+  margin-right: 14px;
+  border-radius: 12px;
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+#map-wrapper .info-box .val {
+  font-size: 29px;
+  color: #fff;
+  line-height: 1;
+}
+
+.chat-wrapper {
+  max-width: 1666px;
+  width: 100%;
+  position: fixed;
+  top: 100%;
+  margin-top: -117px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 15px;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.chat-wrapper.active {
+  top: 330px;
+  bottom: 0;
+}
+
+.toggle-chat {
+  background: #fff;
+  position: absolute;
+  padding: 15px 56px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.toggle-chat.active .arrow {
+  transform: rotate(180deg);
+}
+.toggle-chat .arrow {
+  width: 12px;
+  height: 7px;
+  margin-top: -6px;
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  z-index: 1;
+}
+
+.chat {
+  background: #fff;
+  position: relative;
+  border-top: 8px solid #3bc5db;
+  border-radius: 12px 12px 0 0;
+  padding: 109px 56px 110px;
+}
+.chat p {
+  color: #969ca7;
+}
+.chat .time {
+  font-size: 20px;
+  position: absolute;
+  top: 36px;
+  right: 30px;
+  z-index: 1;
+}
+.chat .message {
+  padding: 10px 0;
+}
+.chat .message span {
+  max-width: 300px;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  padding: 20px 30px;
+}
+.chat .message span:before {
+  content: '';
+  border-style: solid;
+  border-width: 15px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.chat .message .attachment {
+  display: block;
+  margin-bottom: 20px;
+}
+.chat .message .attachment figcaption {
+  font-size: 13px;
+  color: #78849e;
+  opacity: 0.56;
+  margin-bottom: 8px;
+}
+.chat .message-user span {
+  background: #3acce1;
+  border-radius: 0 12px 12px 12px;
+}
+.chat .message-user span:before {
+  border-color: #3acce1 #3acce1 transparent transparent;
+  left: -15px;
+}
+.chat .message-driver span {
+  background: #78849e;
+  border-radius: 12px 0 12px 12px;
+}
+.chat .message-driver span:before {
+  border-color: #78849e transparent transparent #78849e;
+  right: -15px;
+}
+.chat .timestamp {
+  display: block;
+  font-size: 15px;
+  color: #78849e;
+}
+.chat .timestamp.today {
+  opacity: 0.56;
+}
+
+.chat-box {
+  background: #f4f4f6;
+  padding: 60px 15px;
+  overflow: auto;
+}
+
+.conversations {
+  max-width: 974px;
+  margin: 0 auto;
+}
+
+.chat-form {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 15px 56px 0;
+}
+.chat-form .form-group {
+  padding-right: 170px;
+}
+.chat-form .form-control-lg {
+  height: 56px;
+}
+.chat-form .btn-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.alarm-clock {
+  display: inline-block;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px #d6d6d6;
+  padding: 17px;
 }
 
 /* Models Start
 _________________________*/
 .modal-content {
   border-radius: 14px;
+}
+.modal-content .avatar {
+  width: 114px;
+  height: 114px;
 }
 
 .modal-header,
@@ -920,6 +1431,6 @@ _________________________*/
   }
 
   [class*="container-"] {
-    max-width: 1636px;
+    max-width: 1666px;
   }
 }
