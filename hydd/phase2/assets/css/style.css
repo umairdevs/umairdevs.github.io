@@ -77,6 +77,16 @@ h3 {
   z-index: 1;
   transition: all 0.3s;
 }
+.toggle-btn:focus {
+  outline: none;
+}
+.toggle-btn.active em {
+  background: #3acce1;
+}
+.toggle-btn.active em:after {
+  background: #fff;
+  left: 28px;
+}
 .toggle-btn input {
   display: none;
 }
@@ -157,13 +167,9 @@ h3 {
   margin-bottom: 30px;
 }
 
-.form-control-lg {
-  font-size: 18px;
-  height: 65px;
-  padding: 10px 30px;
-}
-
 .form-control {
+  font-size: 15px;
+  padding: 10px 30px;
   color: #454f63;
   border-radius: 12px;
 }
@@ -176,11 +182,19 @@ h3 {
 .form-control::placeholder {
   color: #b4bac9;
 }
+.form-control:focus {
+  box-shadow: none;
+}
 .form-control.has-shadow {
   box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
 }
-.form-control:focus {
+.form-control.has-shadow:focus {
   box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+}
+
+.form-control-lg {
+  height: 65px;
+  font-size: 18px;
 }
 
 .select-box {
@@ -189,6 +203,7 @@ h3 {
 .select-box select {
   -webkit-appearance: none;
   appearance: none;
+  padding-right: 65px;
 }
 .select-box:after {
   content: '';
@@ -222,6 +237,14 @@ h3 {
 }
 .accordion [data-toggle="collapse"]:hover {
   text-decoration: none;
+}
+
+.custom-hide {
+  display: none;
+}
+
+.custom-show {
+  display: block !important;
 }
 
 .text-danger {
@@ -538,7 +561,7 @@ _________________________*/
 
 .location-fields {
   border-bottom: 1px solid #f4f4f6;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   padding-left: 30px;
 }
 .location-fields .title {
@@ -588,6 +611,15 @@ _________________________*/
   padding-right: 35px;
 }
 
+.location-field.form-control {
+  height: 34px;
+  font-size: 18px;
+  padding: 0;
+}
+.location-field.form-control:focus {
+  box-shadow: none;
+}
+
 .pickup.has-icon {
   background-image: url(../images/pin.svg);
 }
@@ -597,15 +629,6 @@ _________________________*/
 }
 .destination.has-icon {
   background-image: url(../images/flag.svg);
-}
-
-.form-control {
-  height: 34px;
-  font-size: 18px;
-  padding: 0;
-}
-.form-control:focus {
-  box-shadow: none;
 }
 
 .address {
@@ -635,6 +658,10 @@ _________________________*/
 }
 .schedule-pickup .form-control {
   font-size: 22px;
+  padding: 0;
+}
+.schedule-pickup .form-control:focus {
+  box-shadow: none;
 }
 .schedule-pickup .form-control::-webkit-input-placeholder {
   color: #a7aebb;
@@ -647,9 +674,10 @@ _________________________*/
 }
 .schedule-pickup .icon-link {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 0;
   z-index: 1;
+  margin-top: -19px;
 }
 .schedule-pickup .icon-link img {
   width: 40px;
@@ -659,6 +687,13 @@ _________________________*/
 .bootstrap-datetimepicker-widget.dropdown-menu {
   width: auto;
   padding: 0;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before, .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+  border-bottom-color: #2a2e43;
+}
+.bootstrap-datetimepicker-widget .btn-primary {
+  background: #2a2e43;
+  border: none;
 }
 .bootstrap-datetimepicker-widget .datepicker table {
   background: #2a2e43;
@@ -693,11 +728,27 @@ _________________________*/
 }
 .bootstrap-datetimepicker-widget .picker-switch {
   background: #3acce1;
+}
+.bootstrap-datetimepicker-widget .picker-switch:hover {
+  background: #138496;
+}
+.bootstrap-datetimepicker-widget .picker-switch td i {
   color: #fff;
+}
+.bootstrap-datetimepicker-widget table td span.active, .bootstrap-datetimepicker-widget table td span:hover {
+  background: #3acce1;
+  color: #fff;
+}
+.bootstrap-datetimepicker-widget table td i:hover {
+  background: transparent;
 }
 .bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
   background: #138496;
   color: #fff;
+}
+
+.duration .title {
+  margin-bottom: 10px;
 }
 
 .slider-labels {
@@ -824,13 +875,10 @@ _________________________*/
   margin: 0 auto 10px;
 }
 .ride-slider .scrollable {
-  max-height: 280px;
   margin: 0 -38px 48px;
-  padding: 0 38px;
-  overflow: auto;
-}
-.ride-slider .scrollable.active {
-  padding-right: 23px;
+  padding: 0 21px 0 38px;
+  max-height: 166px;
+  overflow-y: scroll;
 }
 .ride-slider .capacities {
   margin-bottom: 32px;
@@ -1157,9 +1205,6 @@ _________________________*/
 }
 .payment-form .col-form-label {
   font-size: 15px;
-}
-.payment-form .form-control:focus {
-  box-shadow: none;
 }
 
 /* Map Section Start

@@ -1,0 +1,1 @@
+var hyddApp = angular.module('hyddApp', []);

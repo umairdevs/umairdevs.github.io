@@ -67,6 +67,18 @@ h3 {
             transition: all 0.3s;
         }
     }
+    &:focus {
+        outline: none;
+    }
+    &.active {
+        em {
+            background: #3acce1;
+            &:after {
+                background: #fff;
+                left: 28px;
+            }
+        }
+    }
     input {
         display: none;
         &:checked {
@@ -155,12 +167,9 @@ h3 {
 .form-group {
     margin-bottom: 30px;
 }
-.form-control-lg {
-    font-size: 18px;
-    height: 65px;
-    padding: 10px 30px;
-}
 .form-control {
+    font-size: 15px;
+    padding: 10px 30px;
     color: #454f63;
     border-radius: 12px;
     &::-webkit-input-placeholder {
@@ -172,18 +181,26 @@ h3 {
     &::placeholder {
         color: #b4bac9;
     }
+    &:focus {
+        box-shadow: none;
+    }
     &.has-shadow {
         box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+        &:focus {
+            box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
+        }
     }
-    &:focus {
-        box-shadow: 0 4px 16px rgba(69, 91, 99, 0.08);
-    }
+}
+.form-control-lg {
+    height: 65px;
+    font-size: 18px;
 }
 .select-box {
     position: relative;
     select {
         -webkit-appearance: none;
         appearance: none;
+        padding-right: 65px;
     }
     &:after {
         content: '';
@@ -222,6 +239,12 @@ h3 {
     }
 }
 // Common
+.custom-hide {
+    display: none;
+}
+.custom-show {
+    display: block !important;
+}
 .text-danger {
     color: #f77 !important;
 }
@@ -546,7 +569,7 @@ _________________________*/
 }
 .location-fields {
     border-bottom: 1px solid #f4f4f6;
-    margin-bottom: 16px;
+    margin-bottom: 0;
     padding-left: 30px;
     .title {
         font-size: 22px;
@@ -594,6 +617,16 @@ _________________________*/
     margin-bottom: 42px;
     padding-right: 35px;
 }
+.location-field{
+    &.form-control {
+        height: 34px;
+        font-size: 18px;
+        padding: 0;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
 .pickup {
     &.has-icon {
         background-image: url(../images/pin.svg);
@@ -604,14 +637,6 @@ _________________________*/
         background-image: url(../images/flag.svg);
     }
     margin-bottom: 26px;
-}
-.form-control {
-    height: 34px;
-    font-size: 18px;
-    padding: 0;
-    &:focus {
-        box-shadow: none;
-    }
 }
 .address {
     color: #b4bac9;
@@ -637,6 +662,11 @@ _________________________*/
     margin-bottom: 30px;
     .form-control {
         font-size: 22px;
+        // height: 34px;
+        padding: 0;
+        &:focus {
+            box-shadow: none;
+        }
         &::-webkit-input-placeholder {
             color: #a7aebb;
         }
@@ -649,9 +679,10 @@ _________________________*/
     }
     .icon-link {
         position: absolute;
-        top: 0;
+        top: 50%;
         right: 0;
         z-index: 1;
+        margin-top: -19px;
         img {
             width: 40px;
             height: 38px;
@@ -662,6 +693,14 @@ _________________________*/
     &.dropdown-menu {
         width: auto;
         padding: 0;
+        &.bottom:before,
+        &.bottom:after {
+            border-bottom-color: #2a2e43;
+        }
+    }
+    .btn-primary {
+        background: #2a2e43;
+        border: none;
     }
     .datepicker {
         table {
@@ -701,11 +740,32 @@ _________________________*/
     }
     .picker-switch {
         background: #3acce1;
-        color: #fff;
+        &:hover {
+            background: #138496;
+        }
+        td i {
+            color: #fff;
+        }
+    }
+    table td span {
+        &.active,
+        &:hover {
+            background: #3acce1;
+            color: #fff;
+        }
+    }
+    table td i:hover {
+        background: transparent;
     }
     table thead tr:first-child th:hover {
         background: #138496;
         color: #fff;
+    }
+
+}
+.duration {
+    .title {
+        margin-bottom: 10px;
     }
 }
 .slider-labels {
@@ -828,13 +888,10 @@ _________________________*/
         margin: 0 auto 10px;
     }
     .scrollable {
-        max-height: 280px;
         margin: 0 -38px 48px;
-        padding: 0 38px;
-        overflow: auto;
-        &.active {
-            padding-right: 23px;
-        }
+        padding: 0 21px 0 38px;
+        max-height: 166px;
+        overflow-y: scroll;
     }
     .capacities {
         margin-bottom: 32px;
@@ -1171,11 +1228,6 @@ _________________________*/
     }
     .col-form-label {
         font-size: 15px;
-    }
-    .form-control {
-        &:focus {
-            box-shadow: none;
-        }
     }
 }
 

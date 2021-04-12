@@ -73,7 +73,7 @@
                                 <div class="location-fields">
                                     <div class="pickup has-icon dropdown">
                                         <h3 class="title mb-0">Pickup Location</h3>
-                                        <input class="form-control border-0" type="text" placeholder="Orly…" data-toggle="dropdown">
+                                        <input class="form-control location-field border-0" type="text" placeholder="Orly…" data-toggle="dropdown">
                                         <ul class="list-unstyled data-list dropdown-menu">
                                             <li>1</li>
                                             <li>2</li>
@@ -82,12 +82,12 @@
                                     </div>
                                     <div class="destination has-icon">
                                         <h3 class="title mb-0">Destination</h3>
-                                        <input class="form-control border-0" type="text" placeholder="61 Bd Haussmann, Paris…">
+                                        <input class="form-control location-field border-0" type="text" placeholder="61 Bd Haussmann, Paris…">
                                     </div>
                                 </div>
                                 <div class="schedule-pickup">
                                     <a class="icon-link" href="#"><img src="assets/images/schedule.svg" alt=""></a>
-                                    <input type="text" class="form-control border-0" id="schedulePickup" placeholder="Schedule Pickup">
+                                    <input type="text" class="form-control border-0" placeholder="Schedule Pickup">
                                 </div>
 
                                 <input class="btn btn-block btn-lg btn-info" type="submit" value="Next">
@@ -95,16 +95,31 @@
                             <div class="tab-pane fade" id="tabDirected">
                                 <div class="pickup has-icon dropdown">
                                     <h3 class="title mb-0">Pickup Location</h3>
-                                    <input class="form-control border-0" type="text" placeholder="Orly…" data-toggle="dropdown">
+                                    <input class="form-control location-field p-0 border-0" type="text" placeholder="Orly…" data-toggle="dropdown">
                                     <ul class="list-unstyled data-list dropdown-menu">
                                         <li>1</li>
                                         <li>2</li>
                                         <li>3</li>
                                     </ul>
                                 </div>
+
                                 <div class="duration">
-                                    <label class="title mb-0">Pickup Location</label>
+                                    <h3 class="title">Duration</h3>
+                                    <div class="select-box form-group">
+                                        <select class="form-control form-control-lg border-0 has-shadow">
+                                            <option value="1">12 hours (480 km included)</option>
+                                            <option value="2">24 hours (480 km included)</option>
+                                            <option value="3">48 hours (480 km included)</option>
+                                        </select>
+                                    </div>
                                 </div>
+
+                                <div class="schedule-pickup">
+                                    <a class="icon-link" href="#"><img src="assets/images/schedule.svg" alt=""></a>
+                                    <input type="text" class="form-control border-0" placeholder="Schedule Pickup">
+                                </div>
+
+                                <input class="btn btn-block btn-lg btn-info" type="submit" value="Next">
                             </div>
                         </div>
                     </div>
@@ -145,9 +160,9 @@
                                 <h4 class="text-center title">Mercedes V-Class</h4>
                                 <div class="scrollable">
                                     <ul class="choices list-unstyled">
-                                        <li><img class="icon" src="assets/images/board.svg" alt=""> <span>Name board</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><label class="toggle-btn"><input type="checkbox" data-target="#modal-board" data-toggle="modal"><em></em></label></li>
-                                        <li><img class="icon" src="assets/images/baby-seat.svg" alt=""> <span>Baby seat</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><label class="toggle-btn"><input type="checkbox"><em></em></label></li>
-                                        <li><img class="icon" src="assets/images/receptionist.svg" alt=""> <span>Receptionist</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><label class="toggle-btn"><input type="checkbox"><em></em></label></li>
+                                        <li><img class="icon" src="assets/images/board.svg" alt=""> <span>Name board</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-board" data-toggle="modal"><em></em></a></li>
+                                        <li><img class="icon" src="assets/images/baby-seat.svg" alt=""> <span>Baby seat</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-seat" data-toggle="modal"><em></em></a></li>
+                                        <li><img class="icon" src="assets/images/receptionist.svg" alt=""> <span>Receptionist</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-receptionist" data-toggle="modal"><em></em></a></li>
                                     </ul>
                                     <div class="key-points">
                                         <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a>
@@ -490,15 +505,6 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-board">Name board Popup</button>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-seat">Baby seat Popup</button>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-receptionist">Receptionist Popup</button>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-
             </div>
         </div>
     </div>
@@ -524,7 +530,7 @@
                     <p>The driver will meet you in the arrival hall holding a name board. Any parking charges will be added to the final fare.  If you are doing the reservation for someone else, please  mention his/her phone number in instructions.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info btn-block">Submit</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-info btn-block">Submit</button>
                 </div>
             </div>
         </div>
@@ -581,7 +587,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info btn-block">Submit</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-info btn-block">Submit</button>
                 </div>
             </div>
         </div>
@@ -613,7 +619,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info btn-block">Submit</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-info btn-block">Submit</button>
                 </div>
             </div>
         </div>
@@ -636,7 +642,9 @@
     <script>
         $(document).ready(function(){
 
-            $('#schedulePickup').datetimepicker();
+            $('.schedule-pickup input').datetimepicker({
+                showClose: true
+            });
 
             // Slider
             $('.ride-slider').slick({
@@ -682,16 +690,17 @@
             }
 
             // Custom counter
+            choicesHTML = '<ul class="choices list-unstyled"> <li><img class="icon" src="assets/images/board.svg" alt=""> <span>Name board</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-board" data-toggle="modal"><em></em></a></li> <li><img class="icon" src="assets/images/baby-seat.svg" alt=""> <span>Baby seat</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-seat" data-toggle="modal"><em></em></a></li> <li><img class="icon" src="assets/images/receptionist.svg" alt=""> <span>Receptionist</span> <a href="#" class="info"><img src="assets/images/circled-info.svg" alt=""></a><a class="toggle-btn" href="#" data-target="#modal-receptionist" data-toggle="modal"><em></em></a></li> </ul>'
             $('.btn-increment').on('click', function(){
 
                 var countVal = $(this).prev().val();
                 countVal++;
                 $(this).prev().val(countVal);
                 $(this).parent('.custom-counter').addClass('active');
-                $(this).parents('.slide-inner').find('.choices').addClass('active');
-                if ($(this).parents('.slide-inner').find('.scrollable')[0].scrollHeight > $(this).parents('.slide-inner').find('.scrollable')[0].clientHeight) {
-                    $(this).parents('.slide-inner').find('.scrollable').addClass('active');
+                if (countVal > 1) {
+                    $(this).parents('.slide-inner').find('.scrollable').prepend(choicesHTML);
                 }
+                $(this).parents('.slide-inner').find('.choices').slideDown('fast');
             })
 
             $('.btn-decrement').on('click', function(){
@@ -700,15 +709,15 @@
 
                     countVal--;
                     $(this).next().val(countVal);
-                }
-                if (countVal == 0) {
                     $('.custom-counter').removeClass('active');
-                    $(this).parents('.slide-inner').find('.choices').removeClass('active');
-
-                    if ($(this).parents('.slide-inner').find('.scrollable')[0].scrollHeight == $(this).parents('.slide-inner').find('.scrollable')[0].clientHeight) {
-                        $(this).parents('.slide-inner').find('.scrollable').removeClass('active');
-                    }
                 }
+
+                    $(this).parents('.slide-inner').find('.scrollable .choices:nth(0)').slideUp('fast', function() {
+                        if (countVal >= 1) {
+
+                            $(this).remove();
+                        }
+                    });
             })
 
             $('.toggle-chat').on('click', function(){
