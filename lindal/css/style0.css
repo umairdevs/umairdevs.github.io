@@ -54,11 +54,9 @@ body, input, select, textarea {
 }
 
 body {
-  height: 100%;
+  height: 100vh;
+  padding-top: 67px;
   color: #07284f;
-}
-body.overflow-h {
-  overflow: hidden;
 }
 
 *,
@@ -275,7 +273,7 @@ input[type="submit"] {
 .radio-group span {
   display: inline-block;
   background: #e3e3e3;
-  color: #fff;
+  color: #07284f;
   border: 1px solid #8b8c8f;
   padding: 5px 8px 4px;
   transition: background 0.3s;
@@ -284,6 +282,7 @@ input[type="submit"] {
 .radio-group input:checked + span {
   background: #07284f;
   border-color: #07284f;
+  color: #fff;
 }
 
 /* Layout 
@@ -296,49 +295,31 @@ ______________________*/
 /* Header
 ______________________*/
 #header-wrap {
-  background-color: #07284f;
-  background: radial-gradient(at 50% 12%, #0c2d58, #012042);
+  background: #07284f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 #header {
-  margin: 0 28px 0 45px;
-  padding: 9px 0 8px;
+  margin: 0 65px;
+  padding: 9px 15px;
 }
 
-#logout,
-#home {
-  display: inline-block;
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-  background-position: center top;
+#menu-btn {
+  display: block;
   color: #fff;
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
-  padding-top: 35px;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
-#logout:hover,
-#home:hover {
-  opacity: 1;
-}
-
-#home {
-  background-image: url(../images/home.svg);
-  display: block;
   margin-right: 42px;
+  padding-top: 3px;
   float: left;
 }
 
-#logout {
-  background-image: url(../images/logout.svg);
-  vertical-align: middle;
-  margin-right: 28px;
-  float: left;
-}
-
-#home span {
+#menu-btn span {
   background: #fff;
   display: block;
   width: 33px;
@@ -347,7 +328,6 @@ ______________________*/
 }
 
 #logo {
-  width: 124px;
   display: block;
   float: left;
 }
@@ -381,13 +361,10 @@ ______________________*/
 /*  Main Area
 -------------------------------------- */
 #main-wrap {
-  background-size: 100% 104%;
-  padding: 40px 0;
+  background: url(../images/bg.jpg) no-repeat center top;
+  background-size: 100% 100%;
+  padding: 68px 0 140px;
   min-height: 100%;
-}
-
-.overflow-h #main-wrap {
-  overflow: hidden;
 }
 
 #main {
@@ -408,7 +385,7 @@ ______________________*/
 
 .content-right {
   position: relative;
-  width: 58%;
+  width: 49.4%;
   -ms-flex-order: 2;
   order: 2;
 }
@@ -496,7 +473,6 @@ ______________________*/
   background: -ms-linear-gradient(90deg, #e3e3e3 0%, white 64%, #f7f7f7 100%);
   padding: 16px 32px;
   overflow-y: scroll;
-  overflow-x: hidden;
 }
 .tab-content .tab {
   display: none;
@@ -555,35 +531,8 @@ ______________________*/
 #tab1 .filter-color {
   float: right;
 }
-#tab1 .filter-color .color-box,
 #tab1 .filter-color .color-box-radio {
-  margin-right: 0;
   border: none;
-}
-#tab1 .filters {
-  margin-bottom: 30px;
-}
-
-.hidden-picker #overCapPicker,
-.hidden-picker #overCapColorVariation,
-.hidden-picker #overCapSelect {
-  visibility: hidden;
-}
-.hidden-picker .empty-color-box {
-  display: inline-block;
-  cursor: default;
-}
-.hidden-picker.picker-active #overCapPicker,
-.hidden-picker.picker-active #overCapSelect {
-  display: inline-block;
-  visibility: visible;
-}
-.hidden-picker.picker-active #overCapColorVariation {
-  display: block;
-  visibility: visible;
-}
-.hidden-picker.picker-active .empty-color-box {
-  display: none;
 }
 
 .tab-title {
@@ -622,13 +571,6 @@ ______________________*/
   width: 156px;
   z-index: 2;
 }
-.filters .format-select {
-  background-position: 84% 11px;
-}
-.filters .format-select select {
-  width: auto;
-  min-width: auto;
-}
 .filters .radio-group {
   margin-bottom: 9px;
 }
@@ -639,18 +581,6 @@ ______________________*/
   text-align: right;
   padding-right: 1px;
 }
-.filters .recent-colors .dropper {
-  display: inline-block;
-  background: url(../images/pipette.png) no-repeat;
-  width: 13px;
-  height: 13px;
-  margin-bottom: -26px;
-  vertical-align: bottom;
-  cursor: pointer;
-}
-.filters .recent-colors .dropper.active {
-  background: url(../images/pipette2.png) no-repeat;
-}
 
 .color-box {
   display: inline-block;
@@ -660,7 +590,6 @@ ______________________*/
   vertical-align: middle;
   border: 1px solid #153459;
   margin: 0 2px 9px;
-  transition: none;
 }
 .color-box.empty-color-box {
   margin-left: 4px;
@@ -678,9 +607,6 @@ ______________________*/
 .color-box.active:before {
   border: 2px solid #d4002d;
 }
-.color-box input {
-  display: none;
-}
 .color-box span {
   position: relative;
   display: inline-block;
@@ -689,18 +615,19 @@ ______________________*/
   overflow: hidden;
   z-index: 2;
 }
-.color-box span.empty {
+.color-box span.empty:after {
+  content: '';
   background: #ff0006;
   width: 2px;
-  height: 35px;
-  transform: rotate(45deg);
   position: absolute;
-  top: -5px;
-  left: 11px;
+  top: -6px;
+  bottom: 0;
   z-index: 1;
+  transform: rotate(45deg);
+  right: 14px;
+  height: 41px;
 }
 
-.color-box,
 .color-box-radio {
   display: inline-block;
   width: 27px;
@@ -713,7 +640,6 @@ ______________________*/
   padding: 2px;
   cursor: pointer;
 }
-.color-box em,
 .color-box-radio em {
   border: 2px solid transparent;
   position: absolute;
@@ -724,11 +650,9 @@ ______________________*/
   z-index: 1;
   visibility: hidden;
 }
-.color-box input,
 .color-box-radio input {
   display: none;
 }
-.color-box input:checked + em,
 .color-box-radio input:checked + em {
   border: 2px solid #d4002d;
   visibility: visible;
@@ -748,7 +672,6 @@ ______________________*/
   min-height: 110px;
   position: relative;
   padding-right: 136px;
-  padding-bottom: 34px;
 }
 
 .color-variable {
@@ -802,9 +725,9 @@ ______________________*/
 }
 
 .view-box-bottom {
-  padding: 0 30px;
   position: absolute;
   left: 0;
+  right: 0;
   bottom: 0;
   z-index: 1;
 }
@@ -812,18 +735,15 @@ ______________________*/
 .view-title {
   position: relative;
   max-width: 377px;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
   display: block;
   text-align: center;
 }
 .view-title span {
-  position: relative;
   display: inline-block;
-  background: white url(../images/view-icon.svg) no-repeat 10px center;
+  background: url(../images/view-icon.svg) no-repeat left center;
   background-size: 32px 19px;
-  padding-left: 47px;
-  padding-right: 10px;
-  z-index: 2;
+  padding-left: 37px;
 }
 .view-title:before, .view-title:after {
   content: '';
@@ -842,9 +762,6 @@ ______________________*/
   right: 0;
 }
 
-.view-selectors {
-  text-align: center;
-}
 .view-selectors label {
   display: inline-block;
   cursor: pointer;
@@ -1190,7 +1107,7 @@ ______________________*/
   padding: 6px;
   position: absolute;
   overflow: hidden;
-  bottom: 0;
+  top: 20px;
   right: 0;
   z-index: 1;
 }
@@ -1429,23 +1346,14 @@ ______________________*/
 }
 
 .color-picker {
+  width: 30px;
+  height: 30px;
   vertical-align: middle;
   margin-bottom: 9px;
 }
 
-.picker_editor {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-.picker_editor input {
-  background: #fff;
-  height: 31px !important;
-  border-radius: 2px;
-}
-
 .picker_sample {
-  display: none;
+  display: inline-block;
   width: 30px;
   height: 30px;
   border: 1px solid #07284f;
@@ -1501,138 +1409,13 @@ ______________________*/
   right: 139px;
 }
 
-.popup {
-  display: flex;
-  display: -ms-flexbox;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.popup.in {
-  opacity: 1;
-  visibility: visible;
-}
-.popup.in .popup-body {
-  margin-top: 0;
-}
-.popup .close-popup {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
-}
-.popup .popup-body {
-  position: relative;
-  background: #fff;
-  flex-direction: column;
-  max-width: 726px;
-  width: 100%;
-  margin: 0 15px;
-  padding: 40px;
-  border-radius: 20px;
-  margin-top: -50px;
-  transition: all 0.3s;
-}
-.popup .popup-body p {
-  line-height: 1.5;
-}
-.popup .title {
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-}
-.popup .copy-link {
-  position: relative;
-  background: #093466;
-  color: #fff;
-  padding: 12px;
-}
-.popup .copy-link a {
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
-.popup .copy-link a:hover {
-  opacity: 1;
-}
-.popup .copy-link img {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  top: 6px;
-  right: 10px;
-  z-index: 1;
-}
-.popup .share-title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  padding-top: 15px;
-}
-.popup .field-wrapper {
-  position: relative;
-  padding-right: 120px;
-}
-.popup input[type="text"],
-.popup input[type="email"] {
-  width: 100%;
-  height: 48px;
-  display: block;
-  background: #093466;
-  color: #fff;
-  border: none;
-  padding: 12px;
-}
-.popup input[type="text"]::placeholder,
-.popup input[type="email"]::placeholder {
-  color: #fff;
-}
-.popup input[type="text"]:-ms-input-placeholder,
-.popup input[type="email"]:-ms-input-placeholder {
-  color: #fff;
-}
-.popup input[type="text"]::-ms-input-placeholder,
-.popup input[type="email"]::-ms-input-placeholder {
-  color: #fff;
-}
-.popup .btn-send {
-  min-width: 100px;
-  background-color: #07284f;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 12px 17px 13px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
-.popup .btn-send:hover {
-  background-color: #093466;
-}
-
 @media (max-width: 1820px) {
   #main {
     margin: 0 120px;
   }
 
-  .picker_sl {
-    width: 110px;
-    height: 110px;
-  }
-
-  .tab-content {
-    padding: 16px 25px;
+  .content-right {
+    width: 45%;
   }
 }
 @media (max-width: 1650px) {
@@ -1644,20 +1427,13 @@ ______________________*/
     margin: 0 80px;
   }
 
+  .content-right {
+    width: 40%;
+  }
+
   .view-box .item-wrap {
     max-width: 300px;
-  }
-
-  .view-selectors span {
-    width: 72px;
-  }
-
-  .filters .format-select select {
-    font-size: 14px;
-  }
-
-  .picker_editor input {
-    width: 70% !important;
+    transform: translateY(-40%);
   }
 }
 @media (max-width: 1480px) {
@@ -1674,25 +1450,30 @@ ______________________*/
   }
 
   .content-right {
-    width: 50%;
+    width: 36%;
   }
 
   .readonly {
     background-size: 15px 22px;
     font-size: 18px;
   }
-
-  .view-box-bottom {
-    max-width: 65%;
-  }
-
-  .view-selectors label {
-    margin-bottom: 5px;
-  }
 }
 @media (max-width: 1365px) {
   #main {
     margin: 0 50px;
+  }
+
+  #contents {
+    display: block;
+  }
+
+  .content-left {
+    margin: 0 auto;
+  }
+
+  .content-right {
+    width: auto;
+    margin-bottom: 50px;
   }
 
   .readonly {
@@ -1716,10 +1497,6 @@ ______________________*/
   .controller .zooming-tools .tool {
     background-size: 16px 16px;
   }
-
-  .layout_default .picker_editor {
-    width: 8rem !important;
-  }
 }
 @media (max-width: 1199px) {
   #main {
@@ -1729,10 +1506,6 @@ ______________________*/
   .nav-tab a {
     background-size: 50px 45px;
     padding-top: 80px;
-  }
-
-  #main-wrap {
-    padding: 68px 0 80px;
   }
 }
 @media (max-width: 767px) {
@@ -1872,16 +1645,5 @@ ______________________*/
 
   .ranges-input .field {
     margin-bottom: 20px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .innovation-text {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1917px) {
-  body {
-    max-width: 1917px;
-    margin: 0 auto;
   }
 }
